@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="cl-week-slider.css">
 
 		<paper-slider step="1" snaps="true" min="0"
-			max="{{numWeeks}}" value="{{selectedWeek}}" secondaryProgress="{{currentWeek}}">
+			max="{{numWeeks}}" value="{{selectedWeek}}" secondaryProgress="{{progressWeek}}">
 				<div class="fill"></div>
 		</paper-slider>
 	</template>
@@ -18,10 +18,10 @@
 			publish: {
 				numWeeks: 0,
 				selectedWeek: 0,
-				currentWeek: 0
+				progressWeek: 0
 			},
 			ready: function () {
-				var slider = document.querySelector('::shadow paper-slider');
+				var slider = this.querySelector('::shadow paper-slider');
 				slider.addEventListener('immediate-value-change', slide);
 				slider.addEventListener('core-change', weekSelected);
 
