@@ -32,8 +32,11 @@
 				}
 
 				function weekSelected(e) {
-					this.fire('clWeekSlider:weekSelected', {
-						selectedWeek: this.value
+					this.fire('core-signal', {
+						name: 'cl-week-slider:week-selected',
+						data: {
+							selectedWeek: this.value
+						}
 					});
 				}
 			}

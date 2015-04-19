@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "~3.3.4",
     "polymer": "Polymer/polymer#^0.5",
-    "paper-slider": "Polymer/paper-slider#^0.5"
+    "paper-slider": "Polymer/paper-slider#^0.5",
+    "core-signals": "Polymer/core-signals#^0.5"
   }
 }
