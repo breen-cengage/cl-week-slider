@@ -1,0 +1,42 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-slider/paper-slider.html">
+
+<polymer-element name="cl-week-slider">
+
+	<template>
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="cl-week-slider.css">
+
+		<paper-slider step="1" snaps="true" min="0"
+			max="{{numWeeks}}" value="{{selectedWeek}}">
+		</paper-slider>
+	</template>
+
+	<script>
+		Polymer({
+			publish: {
+				numWeeks: 0,
+				selectedWeek: 0	
+			},
+			ready: function () {
+				var slider = document.querySelector('::shadow paper-slider');
+				slider.addEventListener('immediate-value-change', slide);
+				slider.addEventListener('core-change', weekSelected);
+
+				function slide(e) {
+					if (this.immediateValue === 0) {
+						this.immediateValue = 1;
+						e.stopPropagation();
+					}
+				}
+
+				function weekSelected(e) {
+					this.fire('clWeekSlider:weekSelected', {
+						selectedWeek: this.value
+					});
+				}
+			}
+		});
+	</script>
+
+</polymer-element>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAa;EACZ,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;;AAGb,uDAAwD;EACvD,UAAU,EAAE,IAAI",
+"sources": ["cl-week-slider.scss"],
+"names": [],
+"file": "cl-week-slider.css"
+}

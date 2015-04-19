@@ -1,0 +1,8 @@
+paper-slider {
+  margin: 100px;
+  width: 600px; }
+
+paper-slider::shadow #sliderBar::shadow #activeProgress {
+  background: none; }
+
+/*# sourceMappingURL=cl-week-slider.css.map */

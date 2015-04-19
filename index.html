@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+		<link rel="import" href="/bower_components/polymer/polymer.html">
+		<link rel="import" href="cl-week-slider.html">
+	</head>
+
+	<body>
+		<cl-week-slider numWeeks="6" selectedWeek="5"></cl-week-slider>
+		<cl-week></cl-week>
+
+		<polymer-element name="cl-week">
+
+			<template>
+				Week <span>{{week.number}}</span>
+			</template>
+
+			<script>
+				Polymer({
+					publish: {
+						week: {}
+					},
+					created: function () {
+						this.week = {}
+					},
+					ready: function () {
+						var clWeekSlider = document.querySelector('cl-week-slider');
+						clWeekSlider.addEventListener('clWeekSlider:weekSelected', weekSelected.bind(this));
+
+						function weekSelected(e) {
+							this.week.number = e.detail.selectedWeek;
+						}
+					}
+				});
+			</script>
+
+		</polymer-element>
+	</body>
+</html>
