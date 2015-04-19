@@ -1,8 +1,29 @@
 paper-slider {
   margin: 100px;
-  width: 600px; }
+  width: 800px; }
 
-paper-slider::shadow #sliderBar::shadow #activeProgress {
-  background: none; }
+paper-slider::shadow #sliderContainer {
+  height: 20px; }
+  paper-slider::shadow #sliderContainer .slider-markers {
+    top: -9px; }
+    paper-slider::shadow #sliderContainer .slider-markers::after {
+      visibility: hidden; }
+  paper-slider::shadow #sliderContainer .slider-marker:nth-child(2) {
+    visibility: hidden; }
+  paper-slider::shadow #sliderContainer .slider-marker::after {
+    position: absolute;
+    top: 9px;
+    height: 20px;
+    width: 3px;
+    border-radius: 0; }
+  paper-slider::shadow #sliderContainer #sliderKnob {
+    top: -6px; }
+  paper-slider::shadow #sliderContainer #sliderBar {
+    height: 100%;
+    top: 0; }
+    paper-slider::shadow #sliderContainer #sliderBar::shadow #progressContainer {
+      border-radius: 12px; }
+      paper-slider::shadow #sliderContainer #sliderBar::shadow #progressContainer #activeProgress {
+        background: none; }
 
 /*# sourceMappingURL=cl-week-slider.css.map */

@@ -1,8 +1,50 @@
 paper-slider {
 	margin: 100px;
-	width: 600px;
+	width: 800px;
 }
 
-paper-slider::shadow #sliderBar::shadow #activeProgress {
-	background: none;
+paper-slider::shadow {
+
+	#sliderContainer {
+		height: 20px;
+
+		.slider-markers {
+			top: -9px;
+
+			&::after {
+				visibility: hidden;
+			}
+		}
+
+		.slider-marker:nth-child(2) {
+			visibility: hidden;
+		}
+
+		.slider-marker::after {
+			position: absolute;
+			top: 9px;
+			height: 20px;
+			width: 3px;
+			border-radius: 0;
+		}
+
+		#sliderKnob {
+			top: -6px;
+		}
+
+		#sliderBar {
+			height: 100%;
+			top: 0;
+
+			&::shadow {
+				#progressContainer {
+					border-radius: 12px;
+
+					#activeProgress {
+						background: none;
+					}
+				}
+			}
+		}
+	}
 }
